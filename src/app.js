@@ -5,7 +5,9 @@ const PORT = process.env.PORT
 const DBURL = process.env.DBURL
 app.use(express.json())
 const mongoose = require("mongoose")
+const cors = require("cors")
 
+app.use(cors())
 mongoose.connect(DBURL).then(data => {
     console.log("Connected !!!!!");
 }).catch(err => {
